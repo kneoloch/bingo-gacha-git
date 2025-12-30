@@ -44,7 +44,12 @@ func _ready() -> void:
 	Gacha.drawn.connect(_drawn, ConnectFlags.CONNECT_DEFERRED) # card_item
 	Gacha.toggleDraws.connect(_toggle_draw_buttons, ConnectFlags.CONNECT_DEFERRED)
 	Gacha.checkUnclaimedCards.connect(_check_for_unclaimed_cards) # card_item
-	Gacha.toggleInv.connect(_toggle_inv)
+	Gacha.toggleInv.connect(_toggle_inv) # card_item, #drawn_cards
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_released("inventory"):
+		player_hand.visible = !player_hand.visible
+		destroy_area.visible = !destroy_area.visible
 
 func _toggle_draw_buttons(lock: bool) -> void:
 	one_draw_button.disabled = lock
@@ -151,7 +156,7 @@ func _check_hand() -> void:
 		_toggle_draw_buttons(true)
 
 func _draws(num: int) -> void:
-	_toggle_inv()
+	_toggle_inv(false) # true
 	_toggle_draw_buttons(true)
 	## Subtracts points from user's points pool on banner draws
 	UserData.POINTS -= num
@@ -161,10 +166,16 @@ func _draws(num: int) -> void:
 	Gacha.emit_signal("drawn")
 	#UserData.emit_signal("updatePoints") 
 
-func _toggle_inv() -> void:
-	bingo_screen.hide()
-	destroy_area.show()
-	player_hand.show()
+func _toggle_inv(toggle: bool) -> void:
+	match toggle:
+		true:
+			bingo_screen.hide()
+			destroy_area.show()
+			player_hand.show()
+		false:
+			bingo_screen.hide()
+			destroy_area.hide()
+			player_hand.hide()
 
 func _on_one_draw_button_pressed() -> void:
 	_draws(1)

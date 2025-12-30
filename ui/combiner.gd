@@ -3,6 +3,7 @@ class_name Combiner
 
 @onready var combiner1: Combiner = get_tree().get_nodes_in_group("combiner_slot")[0]
 @onready var combiner2: Combiner = get_tree().get_nodes_in_group("combiner_slot")[1]
+var middle_position: Vector2 = self.global_position + scale * size / 2.0
 
 ## Window Drag UI
 var drag_window: bool = false
@@ -26,7 +27,7 @@ func snap_to_combiner() -> void:
 	for card: CardItem in get_tree().get_nodes_in_group("card_drawn"):
 		if !self.get_child_count() == 0:
 			return
-		if self.get_global_rect().has_point(card.global_position):
+		if self.get_global_rect().has_point(card.global_position + scale * size / 2.0):
 			card.reparent(self)
 			card.following_mouse = false
 			card.global_position = self.global_position

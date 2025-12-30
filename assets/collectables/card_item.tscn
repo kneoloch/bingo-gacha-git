@@ -21,6 +21,7 @@ material = SubResource("ShaderMaterial_d1f1f")
 use_parent_material = true
 offset_right = 116.0
 offset_bottom = 178.0
+size_flags_horizontal = 4
 button_mask = 3
 script = ExtResource("2_g73bm")
 

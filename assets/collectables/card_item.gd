@@ -41,6 +41,8 @@ var mouse_velocity: Vector2
 var following_mouse: bool = false
 var last_pos: Vector2
 var velocity: Vector2
+var middle_position: Vector2 = self.global_position + scale * size / 2.0
+
 #var mouse_in: bool = false
 
 func _ready() -> void:

@@ -19,7 +19,7 @@ var riddles_dict: Dictionary = {
 	"myshitisass": "when you look back at your work and it sucks so bad (11)",
 	"womb": "return to the _ _ _ _ (4)",
 	"thepurpleline": "construction project pending til 20XX (13)",
-	"wasians": "there's an enclosure in the westoid zoo marked just for them (7)",
+	"wasians": "there's an enclosure in the westoid zoo marked just for them (plural noun, 7)",
 	"bandislife": "let's all go quit our jobs and start a band! how does the slogan go? (10)",
 }
 

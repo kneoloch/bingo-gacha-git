@@ -58,7 +58,7 @@ func draw_starter_cards(from_pos: Vector2, number: int, drawn_card_collection: A
 	
 	tween.tween_callback(set_process.bind(true))
 	tween.tween_property(self, "sine_offset_mult", anim_offset_y, 1.5).from(0.0)
-	Gacha.toggleInv.emit() # gacha_manager
+	Gacha.emit_signal("toggleInv", false) # gacha_manager
 
 func draw_cards(from_pos: Vector2, number: int, drawn_card_collection: Array) -> void:
 	drawn = true
