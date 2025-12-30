@@ -174,6 +174,7 @@ func login_gui_toggle(on: bool) -> void:
 			login_screen.hide()
 			gacha_screen.show()
 			home_hud.show()
+			gacha_screen._toggle_inv(false)
 
 func _on_user_options_button_pressed() -> void:
 	user_options_tab.visible = !user_options_tab.visible

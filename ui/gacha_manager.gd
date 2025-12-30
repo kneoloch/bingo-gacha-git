@@ -168,12 +168,14 @@ func _toggle_inv(toggle: bool) -> void:
 	match toggle:
 		true:
 			bingo_screen.hide()
+			combine_cards_area.hide()
 			destroy_area.show()
 			player_hand.show()
 		false:
 			bingo_screen.hide()
 			destroy_area.hide()
 			player_hand.hide()
+			combine_cards_area.hide()
 
 func _on_one_draw_button_pressed() -> void:
 	_draws(1)
