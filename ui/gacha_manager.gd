@@ -35,9 +35,7 @@ var drawn_card_collection: Array = []
 func _ready() -> void:
 	selected_banner = starting_banner
 	_choose_banner(CURR_BANNER)
-	player_hand.hide()
-	destroy_area.hide()
-	combine_cards_area.hide()
+	_toggle_inv(false)
 	_toggle_draw_buttons(true)
 	Gacha.connect("selectBanner", _on_selected_banner)
 	Gacha.drawCardPool.connect(_new_card_collection)
