@@ -1,0 +1,102 @@
+[gd_scene load_steps=4 format=3 uid="uid://biv4nqf54qr00"]
+
+[ext_resource type="Script" uid="uid://b2r0k7fd47ajy" path="res://ui/inventory.gd" id="1_psafj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c0rdb"]
+bg_color = Color(0.13333334, 0.13725491, 0.13725491, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.9411765, 0.9647059, 0.9411765, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_psafj"]
+bg_color = Color(0.13333334, 0.13725491, 0.13725491, 1)
+border_width_bottom = 2
+border_color = Color(0.9411765, 0.9647059, 0.9411765, 1)
+
+[node name="Inventory" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_psafj")
+
+[node name="InventoryContainer" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+offset_right = 277.0
+offset_bottom = 644.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_c0rdb")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="InventoryContainer"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Panel" type="Panel" parent="InventoryContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_psafj")
+
+[node name="DragWindowButton" type="Button" parent="InventoryContainer/VBoxContainer/Panel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="InventoryContainer/VBoxContainer/Panel/DragWindowButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+alignment = 2
+
+[node name="MinimizeButton" type="Button" parent="InventoryContainer/VBoxContainer/Panel/DragWindowButton/HBoxContainer"]
+layout_mode = 2
+text = "   —   "
+flat = true
+
+[node name="ExitButton" type="Button" parent="InventoryContainer/VBoxContainer/Panel/DragWindowButton/HBoxContainer"]
+layout_mode = 2
+text = "  X  "
+flat = true
+
+[node name="ScrollContainer" type="ScrollContainer" parent="InventoryContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="InventoryContainer/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_right = 4
+
+[node name="InventoryGrid" type="GridContainer" parent="InventoryContainer/VBoxContainer/ScrollContainer/MarginContainer"]
+unique_name_in_owner = true
+z_index = 2
+layout_mode = 2
+mouse_filter = 2
+columns = 5
+
+[node name="ResizeArea" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_default_cursor_shape = 12
+
+[connection signal="button_down" from="InventoryContainer/VBoxContainer/Panel/DragWindowButton" to="." method="_on_drag_window_button_button_down"]
+[connection signal="button_up" from="InventoryContainer/VBoxContainer/Panel/DragWindowButton" to="." method="_on_drag_window_button_button_up"]
+[connection signal="pressed" from="InventoryContainer/VBoxContainer/Panel/DragWindowButton/HBoxContainer/MinimizeButton" to="." method="_on_minimize_button_pressed"]
+[connection signal="pressed" from="InventoryContainer/VBoxContainer/Panel/DragWindowButton/HBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="tree_entered" from="ResizeArea" to="." method="_on_resize_area_tree_entered"]
+[connection signal="tree_exited" from="ResizeArea" to="." method="_on_resize_area_tree_exited"]

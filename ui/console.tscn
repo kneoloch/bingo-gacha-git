@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=3 uid="uid://cvg77xiid27ut"]
+
+[ext_resource type="Script" uid="uid://clcf7assu38qj" path="res://ui/console.gd" id="1_buh4c"]
+[ext_resource type="StyleBox" uid="uid://dnihnt70fdkkq" path="res://ui/console.tres" id="2_72wq2"]
+
+[node name="Console" type="Control"]
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+offset_right = 675.0
+offset_bottom = 626.0
+mouse_filter = 2
+script = ExtResource("1_buh4c")
+
+[node name="Console" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("2_72wq2")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Console"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ConsoleContainer" type="VBoxContainer" parent="Console/ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ResizeArea" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 0
+mouse_default_cursor_shape = 12
+
+[connection signal="tree_entered" from="ResizeArea" to="." method="_on_resize_area_tree_entered"]
+[connection signal="tree_exited" from="ResizeArea" to="." method="_on_resize_area_tree_exited"]

@@ -1,0 +1,1076 @@
+[gd_scene load_steps=72 format=3 uid="uid://ddqagvk4c8uhy"]
+
+[ext_resource type="Script" uid="uid://c15kwyk1ebvoi" path="res://ui/gui.gd" id="1_06t4h"]
+[ext_resource type="Script" uid="uid://dxmqfhy1o1hbo" path="res://ui/login_screen.gd" id="2_7vrkn"]
+[ext_resource type="Script" uid="uid://dc4lugiutq31y" path="res://ui/console_line.gd" id="2_jix8l"]
+[ext_resource type="Texture2D" uid="uid://cn7h44k7lcq5q" path="res://assets/gui/title.png" id="2_pbm0j"]
+[ext_resource type="StyleBox" uid="uid://brdc7kovg76an" path="res://ui/black_normal.tres" id="2_s1050"]
+[ext_resource type="StyleBox" uid="uid://cxxwyr16ug870" path="res://ui/white_hover.tres" id="3_i5ydv"]
+[ext_resource type="Script" uid="uid://mqof3fdj6jrn" path="res://ui/gacha_manager.gd" id="4_jix8l"]
+[ext_resource type="Shader" uid="uid://lmtnr0kf4wjx" path="res://assets/shaders/bounce_wave.gdshader" id="4_l4cq4"]
+[ext_resource type="Texture2D" uid="uid://dqj0ofh5ppwgb" path="res://assets/banners/smash_the_world_shell.png" id="4_ubpvv"]
+[ext_resource type="PackedScene" uid="uid://cvg77xiid27ut" path="res://ui/console.tscn" id="5_8qtwp"]
+[ext_resource type="StyleBox" uid="uid://ch3cetgieh2xm" path="res://ui/roll_button_dark.tres" id="5_bgtsx"]
+[ext_resource type="StyleBox" uid="uid://dpb1wbe3tbj7b" path="res://ui/roll_button_light.tres" id="6_kaxbk"]
+[ext_resource type="Script" uid="uid://dwbjld0rhdupv" path="res://scripts/sync_button.gd" id="6_nlkkf"]
+[ext_resource type="PackedScene" uid="uid://biv4nqf54qr00" path="res://ui/inventory.tscn" id="6_qe12f"]
+[ext_resource type="StyleBox" uid="uid://dce08a6u5xcnb" path="res://ui/banner_normal.tres" id="8_lsdqh"]
+[ext_resource type="StyleBox" uid="uid://cuea1w2353uti" path="res://ui/banner_hover.tres" id="9_jiymt"]
+[ext_resource type="StyleBox" uid="uid://jtv4742q4kj4" path="res://ui/focus.tres" id="10_i5ydv"]
+[ext_resource type="StyleBox" uid="uid://bo78g2lqxhtwh" path="res://ui/box_dark.tres" id="12_dooca"]
+[ext_resource type="StyleBox" uid="uid://di8ivugamya4q" path="res://ui/big_button.tres" id="12_kaxbk"]
+[ext_resource type="PackedScene" uid="uid://e1b4i6m040jv" path="res://assets/collectables/card_item.tscn" id="13_0c1wp"]
+[ext_resource type="Texture2D" uid="uid://brdc2202k4er7" path="res://assets/gui/inventory_icon.png" id="13_0nobx"]
+[ext_resource type="Script" uid="uid://mci26nvynmv3" path="res://ui/drawn_cards.gd" id="13_l4cq4"]
+[ext_resource type="PackedScene" uid="uid://mhghqqx3ooy4" path="res://ui/card_slot.tscn" id="13_n8kak"]
+[ext_resource type="Texture2D" uid="uid://cyavjxye054m3" path="res://assets/gui/change_user_icon.png" id="13_pbm0j"]
+[ext_resource type="StyleBox" uid="uid://dyeacg5jhea7b" path="res://ui/box_light.tres" id="13_rqnt3"]
+[ext_resource type="Texture2D" uid="uid://c12co1tjaloup" path="res://assets/gui/combine_button_icon.png" id="14_10sdn"]
+[ext_resource type="Texture2D" uid="uid://c2se8n3vm4qa2" path="res://assets/gui/star_icon.png" id="16_8jgmr"]
+[ext_resource type="PackedScene" uid="uid://c4wg57yj5380x" path="res://ui/bingo.tscn" id="16_iyrh0"]
+[ext_resource type="StyleBox" uid="uid://bknynakr00jym" path="res://ui/tracker_icons.tres" id="16_jqly5"]
+[ext_resource type="Script" uid="uid://br38y1tn3k2c5" path="res://ui/combiner.gd" id="16_nohsj"]
+[ext_resource type="Texture2D" uid="uid://csnwjct1kg6mp" path="res://assets/gui/heart_icon.png" id="17_q75kt"]
+[ext_resource type="Texture2D" uid="uid://dqtixtp58s63m" path="res://assets/gui/points_icon.png" id="19_pbm0j"]
+[ext_resource type="StyleBox" uid="uid://hkcwow24v1b5" path="res://ui/big_button_hover.tres" id="20_rqnt3"]
+[ext_resource type="Script" uid="uid://dk1pltu3t6r3s" path="res://ui/banner_button.gd" id="23_dbfs1"]
+[ext_resource type="Texture2D" uid="uid://bpjaya10kkygi" path="res://assets/gui/combine_icon.png" id="25_7mcg4"]
+[ext_resource type="Texture2D" uid="uid://brbq6thwurjdq" path="res://assets/gui/save_button_dark.png" id="26_wj15g"]
+[ext_resource type="Texture2D" uid="uid://cuy566xefbkeo" path="res://assets/gui/save_button_light.png" id="27_e8e8i"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fu7sn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7vrkn"]
+bg_color = Color(0.13333334, 0.13725491, 0.13725491, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.9411765, 0.9647059, 0.9411765, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sb7pk"]
+content_margin_left = 12.0
+content_margin_top = 12.0
+content_margin_right = 12.0
+content_margin_bottom = 12.0
+bg_color = Color(0.13333334, 0.13725491, 0.13725491, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.9411765, 0.9647059, 0.9411765, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pbm0j"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sb7pk"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l4cq4"]
+shader = ExtResource("4_l4cq4")
+shader_parameter/wave_amplitude = 0.0
+shader_parameter/wave_frequency = 140.0
+shader_parameter/movement_speed = 2.0
+shader_parameter/movement_amplitude = 2.5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cm266"]
+bg_color = Color(0.13333334, 0.13725491, 0.13725491, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.9411765, 0.9647059, 0.9411765, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0o4t1"]
+bg_color = Color(0.13333334, 0.13725491, 0.13725491, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.9411765, 0.9647059, 0.9411765, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g8g3n"]
+bg_color = Color(0.13333334, 0.13725491, 0.13725491, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.9411765, 0.9647059, 0.9411765, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0k4wn"]
+bg_color = Color(0.9490196, 0.4627451, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.9411765, 0.9647059, 0.9411765, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8u0te"]
+bg_color = Color(0.13333334, 0.13725491, 0.13725491, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.9411765, 0.9647059, 0.9411765, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j5v2v"]
+bg_color = Color(0.48235294, 1, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.9411765, 0.9647059, 0.9411765, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oiatc"]
+bg_color = Color(0.13333334, 0.13725491, 0.13725491, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.9411765, 0.9647059, 0.9411765, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iotk1"]
+bg_color = Color(1, 0.21568628, 0.7372549, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.9411765, 0.9647059, 0.9411765, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nlkkf"]
+content_margin_right = 16.0
+content_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l4cq4"]
+content_margin_right = 8.0
+content_margin_bottom = 24.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nohsj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0nobx"]
+content_margin_left = 12.0
+content_margin_top = 6.0
+content_margin_right = 12.0
+content_margin_bottom = 6.0
+bg_color = Color(0.13333334, 0.13725491, 0.13725491, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.9411765, 0.9647059, 0.9411765, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7mcg4"]
+content_margin_left = 12.0
+content_margin_top = 6.0
+content_margin_right = 12.0
+content_margin_bottom = 6.0
+bg_color = Color(0.13333334, 0.13725491, 0.13725491, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.9411765, 0.9647059, 0.9411765, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n8kak"]
+resource_local_to_scene = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l4cq4"]
+content_margin_top = 12.0
+content_margin_bottom = 12.0
+bg_color = Color(0.13333334, 0.13725491, 0.13725491, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.9411765, 0.9647059, 0.9411765, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7mcg4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n8kak"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.9411765, 0.9647059, 0.9411765, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n8kak"]
+content_margin_top = 24.0
+content_margin_right = 24.0
+content_margin_bottom = 24.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s1050"]
+content_margin_top = 28.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i5ydv"]
+content_margin_left = 24.0
+content_margin_bottom = 8.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5klac"]
+content_margin_left = 4.0
+content_margin_top = 10.0
+content_margin_bottom = 3.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rqnt3"]
+content_margin_left = 12.0
+content_margin_top = 4.0
+bg_color = Color(0.9411765, 0.9647059, 0.9411765, 1)
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.13333334, 0.13725491, 0.13725491, 1)
+expand_margin_right = 48.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dooca"]
+content_margin_top = 48.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lsdqh"]
+content_margin_left = 16.0
+bg_color = Color(0.13333334, 0.13725491, 0.13725491, 1)
+border_width_top = 2
+border_width_right = 4
+border_width_bottom = 2
+border_color = Color(0.9411765, 0.9647059, 0.9411765, 1)
+expand_margin_right = 16.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jiymt"]
+content_margin_left = 32.0
+bg_color = Color(0.13333334, 0.13725491, 0.13725491, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.9411765, 0.9647059, 0.9411765, 1)
+border_blend = true
+expand_margin_right = 32.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bgtsx"]
+content_margin_left = 32.0
+bg_color = Color(0.13333334, 0.13725491, 0.13725491, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.9411765, 0.9647059, 0.9411765, 1)
+expand_margin_right = 32.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_racxt"]
+content_margin_left = 24.0
+content_margin_top = 24.0
+content_margin_right = 24.0
+content_margin_bottom = 12.0
+bg_color = Color(0.13333334, 0.13725491, 0.13725491, 0)
+border_color = Color(0.8745098, 0.8745098, 0.8745098, 0.5019608)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jix8l"]
+content_margin_right = 12.0
+content_margin_bottom = 6.0
+
+[node name="Main Menu" type="Node2D"]
+
+[node name="GUI" type="CanvasLayer" parent="."]
+script = ExtResource("1_06t4h")
+
+[node name="Main" type="PanelContainer" parent="GUI"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_fu7sn")
+
+[node name="Screens" type="PanelContainer" parent="GUI/Main"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7vrkn")
+
+[node name="LoginScreen" type="Control" parent="GUI/Main/Screens"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+
+[node name="LoginBar" type="HBoxContainer" parent="GUI/Main/Screens/LoginScreen"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 388.0
+offset_top = 352.0
+offset_right = 764.0
+offset_bottom = 399.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 10
+script = ExtResource("2_7vrkn")
+
+[node name="LoginLineEdit" type="LineEdit" parent="GUI/Main/Screens/LoginScreen/LoginBar"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_sb7pk")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_pbm0j")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_sb7pk")
+placeholder_text = "Enter password..."
+caret_blink = true
+secret = true
+
+[node name="EnterButton" type="Button" parent="GUI/Main/Screens/LoginScreen/LoginBar"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9411765, 0.9647059, 0.9411765, 1)
+theme_override_colors/font_focus_color = Color(0.13333334, 0.13725491, 0.13725491, 1)
+theme_override_colors/font_pressed_color = Color(0.13333334, 0.13725491, 0.13725491, 1)
+theme_override_colors/font_hover_color = Color(0.13333334, 0.13725491, 0.13725491, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.9411765, 0.9647059, 0.9411765, 1)
+theme_override_colors/font_outline_color = Color(0.13333334, 0.13725491, 0.13725491, 1)
+theme_override_styles/normal = ExtResource("2_s1050")
+theme_override_styles/pressed = ExtResource("2_s1050")
+theme_override_styles/hover = ExtResource("3_i5ydv")
+theme_override_styles/hover_pressed = ExtResource("2_s1050")
+theme_override_styles/focus = ExtResource("3_i5ydv")
+text = "ENTER"
+
+[node name="WelcomeText" type="RichTextLabel" parent="GUI/Main/Screens/LoginScreen"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 151)
+layout_mode = 0
+offset_right = 1200.0
+offset_bottom = 151.0
+size_flags_vertical = 0
+theme_override_colors/default_color = Color(0.9411765, 0.9647059, 0.9411765, 1)
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "[wave amp=20.0 freq=5.0 connected=1]WELCOME TO "
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Title" type="Sprite2D" parent="GUI/Main/Screens/LoginScreen"]
+material = SubResource("ShaderMaterial_l4cq4")
+position = Vector2(584.80005, 229)
+scale = Vector2(1.9666668, 1.9666669)
+texture = ExtResource("2_pbm0j")
+
+[node name="LoginScreenUsers" type="HBoxContainer" parent="GUI/Main/Screens/LoginScreen"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -280.0
+offset_top = -64.0
+offset_right = 280.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 16
+alignment = 1
+script = ExtResource("2_7vrkn")
+
+[node name="AmyraLoginButton" type="Button" parent="GUI/Main/Screens/LoginScreen/LoginScreenUsers"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9411765, 0.9647059, 0.9411765, 1)
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_cm266")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0o4t1")
+text = "A"
+icon_alignment = 1
+
+[node name="JoeyLoginButton" type="Button" parent="GUI/Main/Screens/LoginScreen/LoginScreenUsers"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9411765, 0.9647059, 0.9411765, 1)
+theme_override_colors/font_outline_color = Color(0.13333334, 0.13725491, 0.13725491, 1)
+theme_override_constants/outline_size = 16
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_g8g3n")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0k4wn")
+text = "J"
+icon_alignment = 1
+
+[node name="KmorLoginButton" type="Button" parent="GUI/Main/Screens/LoginScreen/LoginScreenUsers"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9411765, 0.9647059, 0.9411765, 1)
+theme_override_colors/font_outline_color = Color(0.13333334, 0.13725491, 0.13725491, 1)
+theme_override_constants/outline_size = 16
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_8u0te")
+theme_override_styles/hover = SubResource("StyleBoxFlat_j5v2v")
+text = "K"
+icon_alignment = 1
+
+[node name="VLoginButton" type="Button" parent="GUI/Main/Screens/LoginScreen/LoginScreenUsers"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9411765, 0.9647059, 0.9411765, 1)
+theme_override_colors/font_outline_color = Color(0.13333334, 0.13725491, 0.13725491, 1)
+theme_override_constants/outline_size = 16
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_oiatc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_iotk1")
+text = "V"
+icon_alignment = 1
+
+[node name="GachaScreen" type="PanelContainer" parent="GUI/Main/Screens" node_paths=PackedStringArray("starting_banner")]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_nlkkf")
+script = ExtResource("4_jix8l")
+starting_banner = NodePath("../HomeHUD/LeftGUI/BannersContainer/Banners/StandardBannerButton")
+
+[node name="BannerTexture" type="TextureRect" parent="GUI/Main/Screens/GachaScreen"]
+unique_name_in_owner = true
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 8
+mouse_filter = 2
+texture = ExtResource("4_ubpvv")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Draws" type="PanelContainer" parent="GUI/Main/Screens/GachaScreen"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_l4cq4")
+
+[node name="DrawOptions" type="HBoxContainer" parent="GUI/Main/Screens/GachaScreen/Draws"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/separation = 31
+alignment = 2
+
+[node name="BannerDetailsButton" type="Button" parent="GUI/Main/Screens/GachaScreen/Draws/DrawOptions"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+text = "View Details"
+flat = true
+
+[node name="BannerDetailsPanel" type="Panel" parent="GUI/Main/Screens/GachaScreen/Draws/DrawOptions/BannerDetailsButton"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 31.0
+offset_top = -289.0
+offset_right = 454.0
+offset_bottom = -44.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_nohsj")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GUI/Main/Screens/GachaScreen/Draws/DrawOptions/BannerDetailsButton/BannerDetailsPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="OneDetailsLabel" type="RichTextLabel" parent="GUI/Main/Screens/GachaScreen/Draws/DrawOptions/BannerDetailsButton/BannerDetailsPanel/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_0nobx")
+bbcode_enabled = true
+text = "Banner Details
+%"
+
+[node name="TenDetailsLabel" type="RichTextLabel" parent="GUI/Main/Screens/GachaScreen/Draws/DrawOptions/BannerDetailsButton/BannerDetailsPanel/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_7mcg4")
+bbcode_enabled = true
+text = "Ten Draws
+%"
+
+[node name="OneDrawButton" type="Button" parent="GUI/Main/Screens/GachaScreen/Draws/DrawOptions"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9411765, 0.9647059, 0.9411765, 1)
+theme_override_colors/font_focus_color = Color(0.9411765, 0.9647059, 0.9411765, 1)
+theme_override_colors/font_pressed_color = Color(0.9411765, 0.9647059, 0.9411765, 1)
+theme_override_colors/font_hover_color = Color(0.13333334, 0.13725491, 0.13725491, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.9411765, 0.9647059, 0.9411765, 1)
+theme_override_colors/font_outline_color = Color(0.13333334, 0.13725491, 0.13725491, 1)
+theme_override_styles/normal = ExtResource("5_bgtsx")
+theme_override_styles/pressed = ExtResource("5_bgtsx")
+theme_override_styles/hover = ExtResource("6_kaxbk")
+theme_override_styles/hover_pressed = ExtResource("5_bgtsx")
+theme_override_styles/focus = ExtResource("10_i5ydv")
+text = "  1 pt | Draw x1         "
+icon = ExtResource("19_pbm0j")
+
+[node name="TenDrawsButton" type="Button" parent="GUI/Main/Screens/GachaScreen/Draws/DrawOptions"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9411765, 0.9647059, 0.9411765, 1)
+theme_override_colors/font_focus_color = Color(0.9411765, 0.9647059, 0.9411765, 1)
+theme_override_colors/font_pressed_color = Color(0.9411765, 0.9647059, 0.9411765, 1)
+theme_override_colors/font_hover_color = Color(0.13333334, 0.13725491, 0.13725491, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.9411765, 0.9647059, 0.9411765, 1)
+theme_override_colors/font_outline_color = Color(0.13333334, 0.13725491, 0.13725491, 1)
+theme_override_styles/normal = ExtResource("5_bgtsx")
+theme_override_styles/pressed = ExtResource("5_bgtsx")
+theme_override_styles/hover = ExtResource("6_kaxbk")
+theme_override_styles/hover_pressed = ExtResource("5_bgtsx")
+theme_override_styles/focus = ExtResource("10_i5ydv")
+text = " 10 pts | Draw x10    "
+icon = ExtResource("19_pbm0j")
+
+[node name="DestroyArea" type="Control" parent="GUI/Main/Screens/GachaScreen"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 258)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+
+[node name="DestroyMark" type="RichTextLabel" parent="GUI/Main/Screens/GachaScreen/DestroyArea" groups=["discard_slot"]]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_n8kak")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 78.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_l4cq4")
+bbcode_enabled = true
+text = "[font_size=19][center]Discard Here For Points "
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CombineCardsArea" type="Control" parent="GUI/Main/Screens/GachaScreen"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+
+[node name="CombinerContainer" type="VBoxContainer" parent="GUI/Main/Screens/GachaScreen/CombineCardsArea"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 892.0
+offset_top = -524.0
+offset_right = 1180.0
+offset_bottom = -314.0
+grow_vertical = 0
+
+[node name="DragWindowButton" type="Button" parent="GUI/Main/Screens/GachaScreen/CombineCardsArea/CombinerContainer"]
+layout_mode = 2
+tooltip_text = "Combine cards with the same name and stack size!"
+theme_override_colors/font_color = Color(0.9411765, 0.9647059, 0.9411765, 1)
+theme_override_colors/font_outline_color = Color(0.13333334, 0.13725491, 0.13725491, 1)
+theme_override_constants/outline_size = 2
+theme_override_styles/normal = ExtResource("5_bgtsx")
+theme_override_styles/pressed = ExtResource("5_bgtsx")
+theme_override_styles/hover = ExtResource("5_bgtsx")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_7mcg4")
+text = "Combine Cards"
+
+[node name="HideCombinerButton" type="Button" parent="GUI/Main/Screens/GachaScreen/CombineCardsArea/CombinerContainer/DragWindowButton"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -42.0
+offset_top = -15.5
+offset_bottom = 15.5
+grow_horizontal = 0
+grow_vertical = 2
+text = "X"
+flat = true
+
+[node name="Combiners" type="HBoxContainer" parent="GUI/Main/Screens/GachaScreen/CombineCardsArea/CombinerContainer"]
+layout_mode = 2
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="Combiner1" type="Panel" parent="GUI/Main/Screens/GachaScreen/CombineCardsArea/CombinerContainer/Combiners" groups=["combiner_slot"]]
+custom_minimum_size = Vector2(116, 178)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_n8kak")
+script = ExtResource("16_nohsj")
+
+[node name="CombineButton" type="TextureButton" parent="GUI/Main/Screens/GachaScreen/CombineCardsArea/CombinerContainer/Combiners"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("14_10sdn")
+texture_pressed = ExtResource("14_10sdn")
+texture_hover = ExtResource("25_7mcg4")
+stretch_mode = 3
+
+[node name="Combiner2" type="Panel" parent="GUI/Main/Screens/GachaScreen/CombineCardsArea/CombinerContainer/Combiners" groups=["combiner_slot"]]
+custom_minimum_size = Vector2(116, 178)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_n8kak")
+script = ExtResource("16_nohsj")
+
+[node name="CenterMark" type="Control" parent="GUI/Main/Screens/GachaScreen" groups=["card_unclaimed_area"]]
+unique_name_in_owner = true
+z_index = 1
+y_sort_enabled = true
+custom_minimum_size = Vector2(590, 450)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+mouse_filter = 2
+
+[node name="PlayerHand" type="Control" parent="GUI/Main/Screens/GachaScreen/CenterMark"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 0
+offset_left = -379.0
+offset_top = -263.0
+offset_right = 473.0
+offset_bottom = -64.0
+
+[node name="PlayerDeck" type="GridContainer" parent="GUI/Main/Screens/GachaScreen/CenterMark/PlayerHand"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 836.0
+offset_bottom = 178.0
+columns = 7
+
+[node name="CardSlot1" parent="GUI/Main/Screens/GachaScreen/CenterMark/PlayerHand/PlayerDeck" groups=["card_slots"] instance=ExtResource("13_n8kak")]
+layout_mode = 2
+
+[node name="CardSlot2" parent="GUI/Main/Screens/GachaScreen/CenterMark/PlayerHand/PlayerDeck" groups=["card_slots"] instance=ExtResource("13_n8kak")]
+layout_mode = 2
+
+[node name="CardSlot3" parent="GUI/Main/Screens/GachaScreen/CenterMark/PlayerHand/PlayerDeck" groups=["card_slots"] instance=ExtResource("13_n8kak")]
+layout_mode = 2
+
+[node name="CardSlot4" parent="GUI/Main/Screens/GachaScreen/CenterMark/PlayerHand/PlayerDeck" groups=["card_slots"] instance=ExtResource("13_n8kak")]
+layout_mode = 2
+
+[node name="CardSlot5" parent="GUI/Main/Screens/GachaScreen/CenterMark/PlayerHand/PlayerDeck" groups=["card_slots"] instance=ExtResource("13_n8kak")]
+layout_mode = 2
+
+[node name="CardSlot6" parent="GUI/Main/Screens/GachaScreen/CenterMark/PlayerHand/PlayerDeck" groups=["card_slots"] instance=ExtResource("13_n8kak")]
+layout_mode = 2
+
+[node name="CardSlot7" parent="GUI/Main/Screens/GachaScreen/CenterMark/PlayerHand/PlayerDeck" groups=["card_slots"] instance=ExtResource("13_n8kak")]
+layout_mode = 2
+
+[node name="DrawHand" type="Control" parent="GUI/Main/Screens/GachaScreen" node_paths=PackedStringArray("from", "to") groups=["draw_hand"]]
+unique_name_in_owner = true
+z_index = 2
+custom_minimum_size = Vector2(550, 180)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+mouse_filter = 2
+script = ExtResource("13_l4cq4")
+from = NodePath(".")
+to = NodePath("../CenterMark")
+card_scene = ExtResource("13_0c1wp")
+
+[node name="HomeHUD" type="PanelContainer" parent="GUI/Main/Screens"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_n8kak")
+
+[node name="LeftGUI" type="VBoxContainer" parent="GUI/Main/Screens/HomeHUD"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_constants/separation = 24
+
+[node name="XConsoleSpace" type="PanelContainer" parent="GUI/Main/Screens/HomeHUD/LeftGUI"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_s1050")
+
+[node name="User" type="PanelContainer" parent="GUI/Main/Screens/HomeHUD/LeftGUI"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_i5ydv")
+
+[node name="UserTab" type="HBoxContainer" parent="GUI/Main/Screens/HomeHUD/LeftGUI/User"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="UserOptionsButton" type="Button" parent="GUI/Main/Screens/HomeHUD/LeftGUI/User/UserTab"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(68, 68)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+tooltip_text = "User Options"
+theme_override_colors/font_color = Color(0.9411765, 0.9647059, 0.9411765, 1)
+theme_override_colors/font_focus_color = Color(0.13333334, 0.13725491, 0.13725491, 1)
+theme_override_colors/font_pressed_color = Color(0.13333334, 0.13725491, 0.13725491, 1)
+theme_override_colors/font_hover_color = Color(0.13333334, 0.13725491, 0.13725491, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.13333334, 0.13725491, 0.13725491, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = ExtResource("12_dooca")
+theme_override_styles/hover = ExtResource("13_rqnt3")
+theme_override_styles/focus = ExtResource("13_rqnt3")
+text = "A"
+icon_alignment = 1
+
+[node name="UserOptionsTab" type="GridContainer" parent="GUI/Main/Screens/HomeHUD/LeftGUI/User/UserTab"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+columns = 2
+
+[node name="SwitchUserButton" type="Button" parent="GUI/Main/Screens/HomeHUD/LeftGUI/User/UserTab/UserOptionsTab"]
+layout_mode = 2
+size_flags_vertical = 0
+tooltip_text = "Switch User"
+icon = ExtResource("13_pbm0j")
+flat = true
+icon_alignment = 1
+
+[node name="InventoryButton" type="Button" parent="GUI/Main/Screens/HomeHUD/LeftGUI/User/UserTab/UserOptionsTab"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+tooltip_text = "Inventory"
+theme_override_colors/font_color = Color(0.13333334, 0.13725491, 0.13725491, 1)
+theme_override_colors/font_focus_color = Color(0.13333334, 0.13725491, 0.13725491, 1)
+theme_override_colors/font_pressed_color = Color(0.13333334, 0.13725491, 0.13725491, 1)
+theme_override_colors/font_hover_color = Color(0.13333334, 0.13725491, 0.13725491, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.13333334, 0.13725491, 0.13725491, 1)
+icon = ExtResource("13_0nobx")
+flat = true
+script = ExtResource("6_nlkkf")
+
+[node name="Inventory" parent="GUI/Main/Screens/HomeHUD/LeftGUI/User/UserTab/UserOptionsTab/InventoryButton" instance=ExtResource("6_qe12f")]
+unique_name_in_owner = true
+visible = false
+z_index = 1
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 63.0
+offset_right = 63.0
+grow_horizontal = 0
+
+[node name="CombineButton" type="Button" parent="GUI/Main/Screens/HomeHUD/LeftGUI/User/UserTab/UserOptionsTab"]
+unique_name_in_owner = true
+layout_mode = 2
+tooltip_text = "Combine Cards"
+icon = ExtResource("25_7mcg4")
+flat = true
+
+[node name="ExpandConsoleButton" type="Button" parent="GUI/Main/Screens/HomeHUD/LeftGUI/User/UserTab/UserOptionsTab"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5klac")
+disabled = true
+text = " + "
+flat = true
+
+[node name="Console" parent="GUI/Main/Screens/HomeHUD/LeftGUI/User/UserTab/UserOptionsTab/ExpandConsoleButton" instance=ExtResource("5_8qtwp")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+offset_left = 29.0
+offset_right = 553.0
+offset_bottom = 181.0
+
+[node name="SaveButton" type="TextureButton" parent="GUI/Main/Screens/HomeHUD/LeftGUI/User/UserTab/UserOptionsTab"]
+unique_name_in_owner = true
+layout_mode = 2
+tooltip_text = "Save"
+texture_normal = ExtResource("26_wj15g")
+texture_pressed = ExtResource("26_wj15g")
+texture_hover = ExtResource("27_e8e8i")
+stretch_mode = 3
+
+[node name="PlayBingoButton" type="Button" parent="GUI/Main/Screens/HomeHUD/LeftGUI"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.13333334, 0.13725491, 0.13725491, 1)
+theme_override_colors/font_focus_color = Color(0.9411765, 0.9647059, 0.9411765, 1)
+theme_override_colors/font_pressed_color = Color(0.13333334, 0.13725491, 0.13725491, 1)
+theme_override_colors/font_hover_color = Color(0.9411765, 0.9647059, 0.9411765, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.9411765, 0.9647059, 0.9411765, 1)
+theme_override_colors/font_outline_color = Color(0.13333334, 0.13725491, 0.13725491, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = ExtResource("12_kaxbk")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rqnt3")
+theme_override_styles/hover = ExtResource("20_rqnt3")
+theme_override_styles/hover_pressed = ExtResource("12_kaxbk")
+theme_override_styles/focus = ExtResource("20_rqnt3")
+text = "PLAY BINGO"
+alignment = 2
+
+[node name="BannersContainer" type="PanelContainer" parent="GUI/Main/Screens/HomeHUD/LeftGUI"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_dooca")
+
+[node name="Banners" type="VBoxContainer" parent="GUI/Main/Screens/HomeHUD/LeftGUI/BannersContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+mouse_filter = 2
+theme_override_constants/separation = 12
+
+[node name="StandardBannerButton" type="Button" parent="GUI/Main/Screens/HomeHUD/LeftGUI/BannersContainer/Banners" groups=["banner"]]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0.9411765, 0.9647059, 0.9411765, 1)
+theme_override_colors/font_focus_color = Color(0.9411765, 0.9647059, 0.9411765, 1)
+theme_override_colors/font_pressed_color = Color(0.9411765, 0.9647059, 0.9411765, 1)
+theme_override_colors/font_hover_color = Color(0.9411765, 0.9647059, 0.9411765, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.9411765, 0.9647059, 0.9411765, 1)
+theme_override_styles/normal = ExtResource("8_lsdqh")
+theme_override_styles/pressed = ExtResource("9_jiymt")
+theme_override_styles/hover = ExtResource("9_jiymt")
+theme_override_styles/hover_pressed = ExtResource("9_jiymt")
+theme_override_styles/focus = SubResource("StyleBoxFlat_lsdqh")
+script = ExtResource("23_dbfs1")
+banner_text = "smash the world's shell"
+
+[node name="AmyraBannerButton" type="Button" parent="GUI/Main/Screens/HomeHUD/LeftGUI/BannersContainer/Banners" groups=["banner"]]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/normal = ExtResource("8_lsdqh")
+theme_override_styles/pressed = ExtResource("9_jiymt")
+theme_override_styles/hover = ExtResource("9_jiymt")
+theme_override_styles/hover_pressed = ExtResource("9_jiymt")
+theme_override_styles/focus = SubResource("StyleBoxFlat_jiymt")
+script = ExtResource("23_dbfs1")
+banner_text = "feeling mother-father full"
+
+[node name="JoeyBannerButton" type="Button" parent="GUI/Main/Screens/HomeHUD/LeftGUI/BannersContainer/Banners" groups=["banner"]]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/normal = ExtResource("8_lsdqh")
+theme_override_styles/pressed = ExtResource("9_jiymt")
+theme_override_styles/hover = ExtResource("9_jiymt")
+theme_override_styles/hover_pressed = ExtResource("9_jiymt")
+theme_override_styles/focus = SubResource("StyleBoxFlat_bgtsx")
+script = ExtResource("23_dbfs1")
+banner_text = "pray for me, machine"
+
+[node name="KmorBannerButton" type="Button" parent="GUI/Main/Screens/HomeHUD/LeftGUI/BannersContainer/Banners"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("8_lsdqh")
+theme_override_styles/hover = ExtResource("9_jiymt")
+text = "stan loona"
+
+[node name="VBannerButton" type="Button" parent="GUI/Main/Screens/HomeHUD/LeftGUI/BannersContainer/Banners"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("8_lsdqh")
+theme_override_styles/hover = ExtResource("9_jiymt")
+text = "visionary vision"
+
+[node name="WildBannerButton" type="Button" parent="GUI/Main/Screens/HomeHUD/LeftGUI/BannersContainer/Banners"]
+visible = false
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("8_lsdqh")
+theme_override_styles/hover = ExtResource("9_jiymt")
+text = "wild banner"
+
+[node name="TrackerTab" type="HBoxContainer" parent="GUI/Main/Screens/HomeHUD"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_constants/separation = 8
+
+[node name="TallyTracker" type="Button" parent="GUI/Main/Screens/HomeHUD/TrackerTab"]
+unique_name_in_owner = true
+layout_mode = 2
+tooltip_text = "Monthly Tally"
+mouse_filter = 1
+theme_override_colors/font_disabled_color = Color(0.9411765, 0.9647059, 0.9411765, 1)
+theme_override_colors/font_outline_color = Color(0.13333334, 0.13725491, 0.13725491, 1)
+theme_override_styles/disabled = ExtResource("16_jqly5")
+disabled = true
+text = "0"
+icon = ExtResource("16_8jgmr")
+icon_alignment = 2
+
+[node name="RollOverTracker" type="Button" parent="GUI/Main/Screens/HomeHUD/TrackerTab"]
+unique_name_in_owner = true
+layout_mode = 2
+tooltip_text = "Rollover Points"
+mouse_filter = 1
+theme_override_colors/font_disabled_color = Color(0.9411765, 0.9647059, 0.9411765, 1)
+theme_override_colors/font_outline_color = Color(0.13333334, 0.13725491, 0.13725491, 1)
+theme_override_styles/disabled = ExtResource("16_jqly5")
+disabled = true
+text = "0"
+icon = ExtResource("17_q75kt")
+icon_alignment = 2
+
+[node name="PointsTracker" type="Button" parent="GUI/Main/Screens/HomeHUD/TrackerTab"]
+unique_name_in_owner = true
+layout_mode = 2
+tooltip_text = "Points"
+mouse_filter = 1
+theme_override_colors/font_color = Color(0.9411765, 0.9647059, 0.9411765, 1)
+theme_override_colors/font_disabled_color = Color(0.9411765, 0.9647059, 0.9411765, 1)
+theme_override_styles/disabled = ExtResource("16_jqly5")
+disabled = true
+text = "000"
+icon = ExtResource("19_pbm0j")
+icon_alignment = 2
+
+[node name="BingoScreen" type="Control" parent="GUI/Main/Screens"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Bingo" parent="GUI/Main/Screens/BingoScreen" instance=ExtResource("16_iyrh0")]
+unique_name_in_owner = true
+z_index = 10
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -382.0
+offset_top = 21.0
+offset_right = 282.0
+offset_bottom = 737.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="ConsoleLine" type="RichTextLabel" parent="GUI/Main"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.9411765, 0.9647059, 0.9411765, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_racxt")
+bbcode_enabled = true
+text = "Console Text..."
+fit_content = true
+script = ExtResource("2_jix8l")
+
+[node name="VersionLabel" type="RichTextLabel" parent="GUI/Main"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 8
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxEmpty_jix8l")
+bbcode_enabled = true
+text = "alpha v 0.1"
+fit_content = true
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[connection signal="text_changed" from="GUI/Main/Screens/LoginScreen/LoginBar/LoginLineEdit" to="GUI" method="_on_login_line_edit_text_changed"]
+[connection signal="text_submitted" from="GUI/Main/Screens/LoginScreen/LoginBar/LoginLineEdit" to="GUI" method="_on_login_line_edit_text_submitted"]
+[connection signal="pressed" from="GUI/Main/Screens/LoginScreen/LoginBar/EnterButton" to="GUI" method="_on_enter_button_pressed"]
+[connection signal="mouse_entered" from="GUI/Main/Screens/LoginScreen/LoginScreenUsers/AmyraLoginButton" to="GUI/Main/Screens/LoginScreen/LoginScreenUsers" method="_on_amyra_login_button_mouse_entered"]
+[connection signal="mouse_exited" from="GUI/Main/Screens/LoginScreen/LoginScreenUsers/AmyraLoginButton" to="GUI/Main/Screens/LoginScreen/LoginScreenUsers" method="_on_amyra_login_button_mouse_exited"]
+[connection signal="pressed" from="GUI/Main/Screens/LoginScreen/LoginScreenUsers/AmyraLoginButton" to="GUI/Main/Screens/LoginScreen/LoginScreenUsers" method="_on_amyra_login_button_pressed"]
+[connection signal="mouse_entered" from="GUI/Main/Screens/LoginScreen/LoginScreenUsers/JoeyLoginButton" to="GUI/Main/Screens/LoginScreen/LoginScreenUsers" method="_on_joey_login_button_mouse_entered"]
+[connection signal="mouse_exited" from="GUI/Main/Screens/LoginScreen/LoginScreenUsers/JoeyLoginButton" to="GUI/Main/Screens/LoginScreen/LoginScreenUsers" method="_on_joey_login_button_mouse_exited"]
+[connection signal="pressed" from="GUI/Main/Screens/LoginScreen/LoginScreenUsers/JoeyLoginButton" to="GUI/Main/Screens/LoginScreen/LoginScreenUsers" method="_on_joey_login_button_pressed"]
+[connection signal="mouse_entered" from="GUI/Main/Screens/LoginScreen/LoginScreenUsers/KmorLoginButton" to="GUI/Main/Screens/LoginScreen/LoginScreenUsers" method="_on_kmor_login_button_mouse_entered"]
+[connection signal="mouse_exited" from="GUI/Main/Screens/LoginScreen/LoginScreenUsers/KmorLoginButton" to="GUI/Main/Screens/LoginScreen/LoginScreenUsers" method="_on_kmor_login_button_mouse_exited"]
+[connection signal="pressed" from="GUI/Main/Screens/LoginScreen/LoginScreenUsers/KmorLoginButton" to="GUI/Main/Screens/LoginScreen/LoginScreenUsers" method="_on_kmor_login_button_pressed"]
+[connection signal="mouse_entered" from="GUI/Main/Screens/LoginScreen/LoginScreenUsers/VLoginButton" to="GUI/Main/Screens/LoginScreen/LoginScreenUsers" method="_on_v_login_button_mouse_entered"]
+[connection signal="mouse_exited" from="GUI/Main/Screens/LoginScreen/LoginScreenUsers/VLoginButton" to="GUI/Main/Screens/LoginScreen/LoginScreenUsers" method="_on_v_login_button_mouse_exited"]
+[connection signal="pressed" from="GUI/Main/Screens/LoginScreen/LoginScreenUsers/VLoginButton" to="GUI/Main/Screens/LoginScreen/LoginScreenUsers" method="_on_v_login_button_pressed"]
+[connection signal="pressed" from="GUI/Main/Screens/GachaScreen/Draws/DrawOptions/BannerDetailsButton" to="GUI" method="_on_banner_details_button_pressed"]
+[connection signal="pressed" from="GUI/Main/Screens/GachaScreen/Draws/DrawOptions/OneDrawButton" to="GUI/Main/Screens/GachaScreen" method="_on_one_draw_button_pressed"]
+[connection signal="pressed" from="GUI/Main/Screens/GachaScreen/Draws/DrawOptions/TenDrawsButton" to="GUI/Main/Screens/GachaScreen" method="_on_ten_draws_button_pressed"]
+[connection signal="mouse_entered" from="GUI/Main/Screens/GachaScreen/DestroyArea" to="GUI/Main/Screens/GachaScreen" method="_on_destroy_area_mouse_entered"]
+[connection signal="button_down" from="GUI/Main/Screens/GachaScreen/CombineCardsArea/CombinerContainer/DragWindowButton" to="GUI/Main/Screens/GachaScreen/CombineCardsArea/CombinerContainer/Combiners/Combiner1" method="_on_drag_window_button_button_down"]
+[connection signal="button_up" from="GUI/Main/Screens/GachaScreen/CombineCardsArea/CombinerContainer/DragWindowButton" to="GUI/Main/Screens/GachaScreen/CombineCardsArea/CombinerContainer/Combiners/Combiner1" method="_on_drag_window_button_button_up"]
+[connection signal="pressed" from="GUI/Main/Screens/GachaScreen/CombineCardsArea/CombinerContainer/DragWindowButton/HideCombinerButton" to="GUI" method="_on_hide_combiner_button_pressed"]
+[connection signal="pressed" from="GUI/Main/Screens/GachaScreen/CombineCardsArea/CombinerContainer/Combiners/CombineButton" to="GUI/Main/Screens/GachaScreen/CombineCardsArea/CombinerContainer/Combiners/Combiner1" method="_on_combine_button_pressed"]
+[connection signal="pressed" from="GUI/Main/Screens/HomeHUD/LeftGUI/User/UserTab/UserOptionsButton" to="GUI" method="_on_user_options_button_pressed"]
+[connection signal="pressed" from="GUI/Main/Screens/HomeHUD/LeftGUI/User/UserTab/UserOptionsTab/SwitchUserButton" to="GUI" method="_on_switch_user_button_pressed"]
+[connection signal="pressed" from="GUI/Main/Screens/HomeHUD/LeftGUI/User/UserTab/UserOptionsTab/InventoryButton" to="GUI/Main/Screens/HomeHUD/LeftGUI/User/UserTab/UserOptionsTab/InventoryButton" method="_on_pressed"]
+[connection signal="pressed" from="GUI/Main/Screens/HomeHUD/LeftGUI/User/UserTab/UserOptionsTab/CombineButton" to="GUI" method="_on_combine_button_pressed"]
+[connection signal="pressed" from="GUI/Main/Screens/HomeHUD/LeftGUI/User/UserTab/UserOptionsTab/ExpandConsoleButton" to="GUI" method="_on_expand_console_button_pressed"]
+[connection signal="pressed" from="GUI/Main/Screens/HomeHUD/LeftGUI/User/UserTab/UserOptionsTab/SaveButton" to="GUI" method="_on_save_button_pressed"]
+[connection signal="pressed" from="GUI/Main/Screens/HomeHUD/LeftGUI/PlayBingoButton" to="GUI" method="_on_play_bingo_button_pressed"]
+[connection signal="mouse_entered" from="GUI/Main/Screens/HomeHUD/LeftGUI/BannersContainer/Banners/StandardBannerButton" to="GUI/Main/Screens/HomeHUD/LeftGUI/BannersContainer/Banners/StandardBannerButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="GUI/Main/Screens/HomeHUD/LeftGUI/BannersContainer/Banners/StandardBannerButton" to="GUI/Main/Screens/HomeHUD/LeftGUI/BannersContainer/Banners/StandardBannerButton" method="_on_mouse_exited"]
+[connection signal="pressed" from="GUI/Main/Screens/HomeHUD/LeftGUI/BannersContainer/Banners/StandardBannerButton" to="GUI/Main/Screens/GachaScreen" method="_on_standard_banner_button_pressed"]
+[connection signal="pressed" from="GUI/Main/Screens/HomeHUD/LeftGUI/BannersContainer/Banners/StandardBannerButton" to="GUI/Main/Screens/HomeHUD/LeftGUI/BannersContainer/Banners/StandardBannerButton" method="_on_pressed"]
+[connection signal="mouse_entered" from="GUI/Main/Screens/HomeHUD/LeftGUI/BannersContainer/Banners/AmyraBannerButton" to="GUI/Main/Screens/HomeHUD/LeftGUI/BannersContainer/Banners/AmyraBannerButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="GUI/Main/Screens/HomeHUD/LeftGUI/BannersContainer/Banners/AmyraBannerButton" to="GUI/Main/Screens/HomeHUD/LeftGUI/BannersContainer/Banners/AmyraBannerButton" method="_on_mouse_exited"]
+[connection signal="pressed" from="GUI/Main/Screens/HomeHUD/LeftGUI/BannersContainer/Banners/AmyraBannerButton" to="GUI/Main/Screens/GachaScreen" method="_on_amyra_banner_button_pressed"]
+[connection signal="pressed" from="GUI/Main/Screens/HomeHUD/LeftGUI/BannersContainer/Banners/AmyraBannerButton" to="GUI/Main/Screens/HomeHUD/LeftGUI/BannersContainer/Banners/AmyraBannerButton" method="_on_pressed"]
+[connection signal="mouse_entered" from="GUI/Main/Screens/HomeHUD/LeftGUI/BannersContainer/Banners/JoeyBannerButton" to="GUI/Main/Screens/HomeHUD/LeftGUI/BannersContainer/Banners/JoeyBannerButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="GUI/Main/Screens/HomeHUD/LeftGUI/BannersContainer/Banners/JoeyBannerButton" to="GUI/Main/Screens/HomeHUD/LeftGUI/BannersContainer/Banners/JoeyBannerButton" method="_on_mouse_exited"]
+[connection signal="pressed" from="GUI/Main/Screens/HomeHUD/LeftGUI/BannersContainer/Banners/JoeyBannerButton" to="GUI/Main/Screens/GachaScreen" method="_on_joey_banner_button_pressed"]
+[connection signal="pressed" from="GUI/Main/Screens/HomeHUD/LeftGUI/BannersContainer/Banners/JoeyBannerButton" to="GUI/Main/Screens/HomeHUD/LeftGUI/BannersContainer/Banners/JoeyBannerButton" method="_on_pressed"]

@@ -1,0 +1,52 @@
+[gd_scene load_steps=4 format=3 uid="uid://4tpmk6j3xcgk"]
+
+[ext_resource type="Texture2D" uid="uid://cyijptt3asrgb" path="res://assets/icon.svg" id="1_clwrc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_opedt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_opedt"]
+bg_color = Color(0.9209947, 0.92099464, 0.9209944, 1)
+corner_radius_top_left = 36
+corner_radius_top_right = 36
+corner_radius_bottom_right = 36
+corner_radius_bottom_left = 36
+
+[node name="Standard Banner" type="PanelContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -511.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_opedt")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+texture_filter = 1
+layout_mode = 2
+disabled = true
+texture_normal = ExtResource("1_clwrc")
+stretch_mode = 0
+
+[node name="RollsContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+alignment = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="RollsContainer"]
+layout_mode = 2
+theme_override_constants/separation = 18
+alignment = 2
+
+[node name="OneRollButton" type="Button" parent="RollsContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_opedt")
+text = "    1 pt | Roll x1    "
+
+[node name="TenRollButton" type="Button" parent="RollsContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_opedt")
+text = "    10 pts | Roll x10    "

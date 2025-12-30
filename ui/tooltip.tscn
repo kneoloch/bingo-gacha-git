@@ -1,0 +1,93 @@
+[gd_scene load_steps=4 format=3 uid="uid://cxpuhbc7y4p34"]
+
+[ext_resource type="Script" uid="uid://b3gvt14kjqqe5" path="res://ui/tooltip.gd" id="1_causk"]
+[ext_resource type="StyleBox" uid="uid://dh0chksyfm8fg" path="res://ui/tooltip.tres" id="1_np3dp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5346w"]
+
+[node name="Tooltip" type="PanelContainer"]
+z_index = 5
+offset_right = 148.0
+offset_bottom = 189.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_5346w")
+script = ExtResource("1_causk")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="ValueButton" type="Button" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9411765, 0.9647059, 0.9411765, 1)
+theme_override_styles/normal = ExtResource("1_np3dp")
+text = "value: x.x"
+alignment = 0
+
+[node name="EffectDescription" type="RichTextLabel" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/default_color = Color(0.9411765, 0.9647059, 0.9411765, 1)
+theme_override_styles/normal = ExtResource("1_np3dp")
+bbcode_enabled = true
+text = "effect:[p][font_size=14]description here"
+fit_content = true
+
+[node name="ActivateButton" type="Button" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = ExtResource("1_np3dp")
+text = "| Use Card"
+alignment = 0
+
+[node name="GiftButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = ExtResource("1_np3dp")
+text = "| Gift to:"
+alignment = 0
+
+[node name="GiftAmyraButton" type="Button" parent="VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(90, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_colors/font_color = Color(0.9411765, 0.9647059, 0.9411765, 1)
+theme_override_styles/normal = ExtResource("1_np3dp")
+text = "| Amyra"
+alignment = 0
+
+[node name="GiftJoeyButton" type="Button" parent="VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(90, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_styles/normal = ExtResource("1_np3dp")
+text = "| Joey"
+alignment = 0
+
+[node name="GiftKmorButton" type="Button" parent="VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(90, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_styles/normal = ExtResource("1_np3dp")
+text = "| Kmor"
+alignment = 0
+
+[node name="GiftVButton" type="Button" parent="VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(90, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_styles/normal = ExtResource("1_np3dp")
+text = "| V"
+alignment = 0
+
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="pressed" from="VBoxContainer/ActivateButton" to="." method="_on_activate_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/GiftButton" to="." method="_on_gift_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/GiftAmyraButton" to="." method="_on_gift_amyra_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/GiftJoeyButton" to="." method="_on_gift_joey_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/GiftKmorButton" to="." method="_on_gift_kmor_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/GiftVButton" to="." method="_on_gift_v_button_pressed"]

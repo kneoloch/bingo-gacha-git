@@ -1,0 +1,64 @@
+[gd_scene load_steps=3 format=3 uid="uid://df4miavu6f08j"]
+
+[ext_resource type="Script" uid="uid://ddrp7nsm0pgks" path="res://ui/console_user_info.gd" id="1_pu1s4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lu137"]
+bg_color = Color(0.13333334, 0.13725491, 0.13725491, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.9411765, 0.9647059, 0.9411765, 1)
+
+[node name="ConsoleUserInfo" type="PanelContainer"]
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_lu137")
+script = ExtResource("1_pu1s4")
+
+[node name="UserInfo" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="User" type="RichTextLabel" parent="UserInfo"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.9411765, 0.9647059, 0.9411765, 1)
+bbcode_enabled = true
+text = "EUNUCH"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Points" type="RichTextLabel" parent="UserInfo"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.9411765, 0.9647059, 0.9411765, 1)
+bbcode_enabled = true
+text = "obtained"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DropRarity" type="RichTextLabel" parent="UserInfo"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.9411765, 0.9647059, 0.9411765, 1)
+bbcode_enabled = true
+text = "DROP"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DropWord" type="RichTextLabel" parent="UserInfo"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.9411765, 0.9647059, 0.9411765, 1)
+bbcode_enabled = true
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1

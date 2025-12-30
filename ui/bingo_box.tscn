@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://boqjn0ltpmrr2"]
+
+[ext_resource type="Texture2D" uid="uid://dpqpm7xga8ugs" path="res://assets/gui/box_panel.png" id="1_3g5l7"]
+[ext_resource type="Script" uid="uid://bs325j6smwwnm" path="res://ui/bingo_box.gd" id="1_drf2o"]
+[ext_resource type="Texture2D" uid="uid://cnexjxyqrjnha" path="res://assets/gui/bingo_check.png" id="2_drf2o"]
+[ext_resource type="Shader" uid="uid://bqtwynmnc1pt1" path="res://assets/shaders/bingo_box.gdshader" id="2_oswv4"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2mki8"]
+resource_local_to_scene = true
+shader = ExtResource("2_oswv4")
+shader_parameter/node_scale = Vector2(1, 1)
+shader_parameter/mix_color = Color(0.053020388, 0.26078537, 2.4065375e-08, 1)
+shader_parameter/sample_color = Color(0.13333334, 0.13725491, 0.13725491, 1)
+
+[node name="BingoBox" type="PanelContainer"]
+script = ExtResource("1_drf2o")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_2mki8")
+layout_mode = 2
+texture_normal = ExtResource("1_3g5l7")
+
+[node name="Checkmark" type="TextureRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("2_drf2o")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "FREE SPACE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

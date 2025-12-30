@@ -1,0 +1,262 @@
+[gd_scene load_steps=17 format=3 uid="uid://c4wg57yj5380x"]
+
+[ext_resource type="Script" uid="uid://bglqvmybn2wg4" path="res://ui/bingo.gd" id="1_k15br"]
+[ext_resource type="Texture2D" uid="uid://bcfdeareb4634" path="res://assets/gui/camera_icon.png" id="2_k15br"]
+[ext_resource type="Texture2D" uid="uid://81v2yo7j7i81" path="res://assets/gui/lock_icon.png" id="2_xjohj"]
+[ext_resource type="Texture2D" uid="uid://bo2mmjoneggyk" path="res://assets/gui/lock_pressed_icon.png" id="3_x55ev"]
+[ext_resource type="Texture2D" uid="uid://c3j3nb26euiu1" path="res://assets/gui/camera_pressed_icon.png" id="3_xbien"]
+[ext_resource type="StyleBox" uid="uid://dnihnt70fdkkq" path="res://ui/console.tres" id="6_x55ev"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x55ev"]
+bg_color = Color(0.13333334, 0.13725491, 0.13725491, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xjohj"]
+bg_color = Color(0.13333334, 0.13725491, 0.13725491, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.9411765, 0.9647059, 0.9411765, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xbien"]
+content_margin_left = 32.0
+content_margin_right = 32.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xbien"]
+bg_color = Color(0.13333334, 0.13725491, 0.13725491, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cqyxn"]
+bg_color = Color(0.13333334, 0.13725491, 0.13725491, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.9411765, 0.9647059, 0.9411765, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k15br"]
+bg_color = Color(0.13333334, 0.13725491, 0.13725491, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x55ev"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ij37"]
+content_margin_left = 12.0
+content_margin_top = 12.0
+content_margin_right = 12.0
+content_margin_bottom = 12.0
+bg_color = Color(0.13333334, 0.13725491, 0.13725491, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.9411765, 0.9647059, 0.9411765, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qoueh"]
+content_margin_left = 16.0
+content_margin_right = 6.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_64mvy"]
+
+[node name="Bingo" type="PanelContainer"]
+offset_right = 217.0
+offset_bottom = 35.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_x55ev")
+script = ExtResource("1_k15br")
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+unique_name_in_owner = true
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+layout_mode = 2
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+unique_name_in_owner = true
+own_world_3d = true
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(664, 716)
+render_target_update_mode = 4
+
+[node name="DragWindowButton" type="Button" parent="SubViewportContainer/SubViewport"]
+offset_right = 664.0
+offset_bottom = 46.0
+flat = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SubViewportContainer/SubViewport"]
+offset_right = 664.0
+offset_bottom = 46.0
+mouse_filter = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="SubViewportContainer/SubViewport/VBoxContainer"]
+custom_minimum_size = Vector2(0, 46)
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xjohj")
+
+[node name="TabLabel" type="RichTextLabel" parent="SubViewportContainer/SubViewport/VBoxContainer/PanelContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_xbien")
+bbcode_enabled = true
+text = "BINGO SHEET"
+fit_content = true
+scroll_active = false
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SubViewportContainer/SubViewport/VBoxContainer/PanelContainer"]
+custom_minimum_size = Vector2(660, 0)
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+alignment = 2
+
+[node name="GenerateButton" type="Button" parent="SubViewportContainer/SubViewport/VBoxContainer/PanelContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_xbien")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_cqyxn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_k15br")
+text = "  Generate Bingo!   "
+
+[node name="BingoTab" type="HBoxContainer" parent="SubViewportContainer/SubViewport/VBoxContainer/PanelContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+alignment = 2
+
+[node name="RerollButton" type="Button" parent="SubViewportContainer/SubViewport/VBoxContainer/PanelContainer/HBoxContainer/BingoTab"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 6
+disabled = true
+text = "Reroll"
+flat = true
+
+[node name="ClearMarksButton" type="Button" parent="SubViewportContainer/SubViewport/VBoxContainer/PanelContainer/HBoxContainer/BingoTab"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 6
+text = "Clear Marks"
+flat = true
+
+[node name="LockButton" type="TextureButton" parent="SubViewportContainer/SubViewport/VBoxContainer/PanelContainer/HBoxContainer/BingoTab"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("2_xjohj")
+texture_pressed = ExtResource("3_x55ev")
+texture_hover = ExtResource("3_x55ev")
+texture_disabled = ExtResource("3_x55ev")
+
+[node name="ScreenshotButton" type="TextureButton" parent="SubViewportContainer/SubViewport/VBoxContainer/PanelContainer/HBoxContainer/BingoTab"]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+tooltip_text = "Screenshot"
+texture_normal = ExtResource("2_k15br")
+texture_pressed = ExtResource("3_xbien")
+stretch_mode = 3
+
+[node name="MinimizeButton" type="Button" parent="SubViewportContainer/SubViewport/VBoxContainer/PanelContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+toggle_mode = true
+text = "—"
+flat = true
+
+[node name="HideButton" type="Button" parent="SubViewportContainer/SubViewport/VBoxContainer/PanelContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "   X       "
+flat = true
+
+[node name="BingoGrid" type="GridContainer" parent="SubViewportContainer/SubViewport/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/h_separation = 6
+theme_override_constants/v_separation = 6
+columns = 5
+
+[node name="LoadingText" type="RichTextLabel" parent="SubViewportContainer/SubViewport"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 46)
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "[wave amp=35.0 freq=5.0 connected=1][font_size=18]Generating..."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PopUpPanel" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(350, 250)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_x55ev")
+
+[node name="PanelContainer" type="PanelContainer" parent="PopUpPanel"]
+custom_minimum_size = Vector2(337, 250)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_2ij37")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PopUpPanel/PanelContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="PopUpPrompt" type="RichTextLabel" parent="PopUpPanel/PanelContainer/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_qoueh")
+bbcode_enabled = true
+text = "Lock in your bingo sheet to claim your bingo win points! [p][br]Note: Doing so will finalize the marks and prevent you from making any further edits."
+fit_content = true
+
+[node name="PanelContainer" type="PanelContainer" parent="PopUpPanel/PanelContainer/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_64mvy")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PopUpPanel/PanelContainer/VBoxContainer/PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_filter = 2
+theme_override_constants/separation = 24
+
+[node name="ConfirmButton" type="Button" parent="PopUpPanel/PanelContainer/VBoxContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = ExtResource("6_x55ev")
+text = "locking in"
+
+[node name="CancelButton" type="Button" parent="PopUpPanel/PanelContainer/VBoxContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = ExtResource("6_x55ev")
+text = "wait, not yet"
+
+[connection signal="button_down" from="SubViewportContainer/SubViewport/DragWindowButton" to="." method="_on_drag_window_button_button_down"]
+[connection signal="button_up" from="SubViewportContainer/SubViewport/DragWindowButton" to="." method="_on_drag_window_button_button_up"]
+[connection signal="gui_input" from="SubViewportContainer/SubViewport/DragWindowButton" to="." method="_on_drag_window_button_gui_input"]
+[connection signal="pressed" from="SubViewportContainer/SubViewport/VBoxContainer/PanelContainer/HBoxContainer/GenerateButton" to="." method="_on_generate_button_pressed"]
+[connection signal="pressed" from="SubViewportContainer/SubViewport/VBoxContainer/PanelContainer/HBoxContainer/BingoTab/RerollButton" to="." method="_on_reroll_button_pressed"]
+[connection signal="pressed" from="SubViewportContainer/SubViewport/VBoxContainer/PanelContainer/HBoxContainer/BingoTab/ClearMarksButton" to="." method="_on_clear_marks_button_pressed"]
+[connection signal="pressed" from="SubViewportContainer/SubViewport/VBoxContainer/PanelContainer/HBoxContainer/BingoTab/LockButton" to="." method="_on_lock_button_pressed"]
+[connection signal="pressed" from="SubViewportContainer/SubViewport/VBoxContainer/PanelContainer/HBoxContainer/BingoTab/ScreenshotButton" to="." method="_on_screenshot_button_pressed"]
+[connection signal="toggled" from="SubViewportContainer/SubViewport/VBoxContainer/PanelContainer/HBoxContainer/MinimizeButton" to="." method="_on_minimize_button_toggled"]
+[connection signal="pressed" from="SubViewportContainer/SubViewport/VBoxContainer/PanelContainer/HBoxContainer/HideButton" to="." method="_on_hide_button_pressed"]
+[connection signal="pressed" from="PopUpPanel/PanelContainer/VBoxContainer/PanelContainer/HBoxContainer/ConfirmButton" to="." method="_on_confirm_button_pressed"]
+[connection signal="pressed" from="PopUpPanel/PanelContainer/VBoxContainer/PanelContainer/HBoxContainer/CancelButton" to="." method="_on_cancel_button_pressed"]
